@@ -28,7 +28,7 @@ document.getElementById('calculate-button').addEventListener('click', function (
     // update account balance 
     const balanceTotal = document.getElementById('balance-total');
     const allIncomeText = balanceTotal.innerText;
-    const allincomeAmount = parseFloat(allIncomeText);
+    const allIncomeAmount = parseFloat(allIncomeText);
     const newIncomeTotal = newincomeAmount - newDepositTotal;
 
     balanceTotal.innerText = newIncomeTotal;
@@ -46,7 +46,7 @@ document.getElementById('saving-button').addEventListener('click', function () {
         let savingsAmount = (income / 100) * savings;
         document.getElementById('savings-Amount').innerText = savingsAmount;
 
-        let balance = document.getElementById('balance').innerText;
+        let balance = document.getElementById('balance-total').innerText;
         //console.log(balance);
         let remainingBalance = balance - savingsAmount;
         document.getElementById('remaining-balance').innerText = remainingBalance;
