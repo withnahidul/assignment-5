@@ -1,4 +1,4 @@
-// handle deposit button event
+// handle calculate button event
 document.getElementById('calculate-button').addEventListener('click', function () {
     // get the amount income
     const incomeInput = document.getElementById('income-input');
@@ -35,4 +35,20 @@ document.getElementById('calculate-button').addEventListener('click', function (
 });
 
 //saving part
+document.getElementById('saving-button').addEventListener('click', function () {
+    let incomeInput = document.getElementById('income-input');
+    let income = parseFloat(incomeInput.value);
 
+    let savingInput = document.getElementById('savingInput');
+    let savings = parseFloat(savingInput.value);
+
+    if (income > savings) {
+        let savingsAmount = (income / 100) * savings;
+        document.getElementById('savings-Amount').innerText = savingsAmount;
+
+        let balance = document.getElementById('balance').innerText;
+        //console.log(balance);
+        let remainingBalance = balance - savingsAmount;
+        document.getElementById('remaining-balance').innerText = remainingBalance;
+    }
+});
