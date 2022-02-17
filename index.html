@@ -5,92 +5,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Money Manager</title>
-    <!-- stylesheet file -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>My Money Manager</title>
+    <!-- css file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body>
     <header>
-        <h1 class="text-5xl text-center mt-16 ">My Money<span class="font-semibold text-sky-600"> Manager </span></h1>
-
+        <section class="container d-flex justify-content-center align-items-center mt-3 mb-3">
+            <h1>My Money <span class="text-info">Manager</span></h1>
+        </section>
     </header>
-    <main class="mt-8 ml-8 mb-8 text-center ">
-        <div class="flex flex-row gap-4 ">
-            <!-- <div class="basis-3/4 bg-[url('/images/money-manage.png')]">
 
-            </div> -->
-
-            <img class="w-3/4  " src="images/money-manage.png">
-
-            <div class="basis-3/4 bg-neutral-300 mr-8 ">
-                <h3 class=" text-2xl font-semibold">Income</h3>
-
-                <from class=" " action="">
-                    <div class="flex gap-2 font-medium">
-                        <h3>Income:</h3>
-                        <input id="income-input" type="text">
-                    </div>
-                    <h3 class=" text-2xl font-semibold">Expencess</h3>
-
-                    <div class="flex gap-7 font-medium">
-                        <h3 class="">Food:</h3>
-                        <input id="food-input" type="text">
-                    </div>
-                    <div class="flex mt-2 gap-8 font-medium">
-                        <h3 class="">Rent:</h3>
-                        <input id="rent-input" type="text">
-                    </div>
-                    <div class=" flex mt-2 gap-3 font-medium">
-                        <h3 class="">Clothes:</h3>
-                        <input id="clothes-input" type="text">
-                    </div>
-                </from>
-                <button id="calculate-button"
-                    class="bg-sky-600 px-4 rounded py-2 text-white font-medium mt-6">Calculate</button>
-                <!-- total Expencess -->
-                <div class="flex p-4 font-bold">
-                    <h3 class="text-2xl">Total Expenses:</h3>
-                    <h4 class="text-2xl"><span id="expenses-total">00</span></h4>
+    <main>
+        <section class="container">
+            <div class="row my-2">
+                <div class="col-lg-6 col-sm">
+                    <img src="images/money-manage.png" class="img-fluid" alt="">
                 </div>
-                <!-- balance  -->
-                <div class="flex p-4 font-bold">
-                    <h3 class="text-2xl">Balance:</h3>
-                    <h4 class="text-2xl"><span id="balance-total">00</span></h4>
-                </div>
-                <!-- Saving part -->
-                <from class=" " action="">
-                    <div class="flex gap-2 ">
-                        <h3 class="font-medium">Save:</h3>
-                        <input id="savingInput" type="text">
-                        <h3 class="font-medium"> % </h3>
-                        <button id="saving-button"
-                            class="bg-sky-600 px-4 rounded py-2 text-white font-medium ">Save</button>
-
+                <!-- income part -->
+                <div class="col-lg-6 col-sm ">
+                    <div class="row">
+                        <h2 class="text-center fw-bold">Income</h2>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <h4 class="text-end">Income:</h4>
+                            </div>
+                            <div class="col input-group">
+                                <input id="income-input" type="text" class="form-control">
+                            </div>
+                        </div>
                     </div>
-                </from>
-                <!-- saving Amount -->
-                <div class="flex p-4 font-bold">
-                    <h3 class="text-2xl">Saving Amount:</h3>
-                    <h4 class="text-2xl"><span id="savings-Amount">00</span></h4>
-                </div>
-                <!-- Remaining Balance -->
-                <div class="flex p-4 font-bold">
-                    <h3 class="text-2xl"> Remaining Balance:</h3>
-                    <h4 class="text-2xl"><span id="remaining-balance">00</span></h4>
-                </div>
+                    <!-- expenses  -->
+                    <div class="row my-3">
+                        <h2 class="fw-bold text-center">Expenses</h2>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <h4 class="text-end">Food:</h4>
+                            </div>
+                            <div class="col input-group">
+                                <input id="food-input" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <h5 class="text-end">Rent:</h5>
+                            </div>
+                            <div class="col input-group">
+                                <input id="rent-input" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <h5 class="text-end">Clothes:</h5>
+                            </div>
+                            <div class="col input-group">
+                                <input id="clothes-input" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center pt-3">
+                            <button id="calculate-button"
+                                class="bg-info border-0 text-white rounded-1">Calculate</button>
+                        </div>
+                    </div>
+                    <!--total expenses part -->
+                    <div class="row">
+                        <h4 class="text-center fw-bold">Total Expenses: <span id="total-expenses">00</span></h4>
+                    </div>
 
+                    <!--total  Balance part -->
+                    <div class="row">
+                        <h4 class="text-center fw-bold mt-2">Balance: <span id="balance">00</span></h4>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-around mt-2">
+                        <div>
+                            <h4>Save:</h4>
+                        </div>
+                        <div>
+                            <input id="saving-input" type="text" class="form-control w-75">
+                        </div>
+                        <div>
+                            <h4>%</h4>
+                        </div>
+                        <div>
+                            <button id="saving-button" class="bg-info border-0 text-white rounded-1">Save</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h4 class="text-center fw-bold pt-4">Saving Amount: <span id="savings-amount"></span></h4>
+                    </div>
+                    <div class="row">
+                        <h4 class="text-center fw-bold pt-2">Remaining Balance: <span id="remaining-balance"></span>
+                        </h4>
+                    </div>
+                </div>
             </div>
-
-
-        </div>
-
-
+        </section>
     </main>
-    <!-- java script  -->
     <script src="js/calculate.js"></script>
-    <!-- Icon -->
-    <script src="https://kit.fontawesome.com/e4fcdac669.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
